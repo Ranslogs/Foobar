@@ -1,0 +1,23 @@
+git diff --word-diff # performs a per word diff
+git add --patch # adds a patch intractive (y,n,h,s,e)
+git checkout --patch # removal of patches (y,n,h,s,e)
+git pull --rebase # set as default
+git reset --hard @{1} # move HEAD to previous change
+
+git config branch.master.rebase true # per branch bases
+git config --global branch.autosetuprebase always # when new branch is created
+
+## rebase of origin/master
+
+#on topic branch
+git co master
+git pl
+git co topic_branch
+git rebase master
+
+# vs.
+git fetch && git rebase origin/master # updates current branch
+
+## only push to current branch
+   git config --global push.default tracking
+
